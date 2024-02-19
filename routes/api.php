@@ -25,6 +25,21 @@ Route::post('pertumbuhan/kuesioner/proses', 'Api\pertumbuhan\Kuesionerpertumbuha
 Route::get('statusberatbadan', 'Api\TesController@statusberatbadan');
 Route::get('statuspanjangbadan', 'Api\TesController@statuspanjangbadan');
 
+
+//perkembangan
+Route::post('kuesionerkpsp/getsoal', 'Api\perkembangan\KuesionerkpspController@getsoal');
+Route::post('kuesionerperkembangan/getsoal', 'Api\perkembangan\KuesionerperkembanganController@getsoal');
+
+//responden
+Route::post('responden/login', 'Api\RespondenController@login');
+Route::post('responden/edit', 'Api\RespondenController@edit');
+Route::post('responden/register', 'Api\RespondenController@register');
+
+//balita
+Route::post('balita/balita', 'Api\BalitaController@balita');
+Route::post('balita/edit', 'Api\BalitaController@edit');
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
